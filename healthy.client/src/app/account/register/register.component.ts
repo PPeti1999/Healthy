@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit{
 
     if (this.registerForm.valid) {
       this.accountService.register(this.registerForm.value).subscribe({
-        next: (response: any) => {
+        next: (response: any) =>  {
           this.sharedService.showNotification(true, response.value.title, response.value.message);
           this.router.navigateByUrl('/account/login');
         },
